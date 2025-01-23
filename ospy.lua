@@ -47,10 +47,45 @@ local Section = Tab:CreateSection("Ospy")
 local ScriptTab = Window:CreateTab("Script")
 local ScriptSection = ScriptTab:CreateSection("Scripts")
 
-local BlitzButton = ScriptTab:CreateButton({
+local ItsmeandButton = Tab:CreateButton({
+    Name = "Bypass Chat",
+    Callback = function()
+        saymsg:FireServer("its me and", "All")
+    end,
+})
+
+local spoofvcsuspentionButton = Tab:CreateButton({
+    Name = "Bypass vcban",
+    Callback = function()
+        game:GetService("VoiceChatService"):joinVoice()
+    end,
+})
+
+local VHSButton = ScriptTab:CreateButton({
+    Name = "VHS premium",
+    Callback = function()
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Fling-Things-and-People-FTAP-VHS-FREE-PREMIUM-24411"))()
+    end,
+})
+
+local CBlitzButton = ScriptTab:CreateButton({
     Name = "Blitz premium",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/chaosscripter/cracks/m/blitz"))()
+    end,
+})
+
+local BlitzButton = ScriptTab:CreateButton({
+    Name = "Blitz free",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
+    end,
+})
+
+local BlitzButton = ScriptTab:CreateButton({
+    Name = "infiniteyield",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end,
 })
 
@@ -111,13 +146,6 @@ end
 Players.PlayerAdded:Connect(function(p)
     p.Chatted:Connect(function(msg) onChatted(p, msg) end)
 end)
-
-local ItsmeandButton = Tab:CreateButton({
-    Name = "# Bypass",
-    Callback = function()
-        saymsg:FireServer("its me and", "All")
-    end,
-})
 
 local OspyToggle = Tab:CreateToggle({
     Name = "Chat Spy Toggle",
