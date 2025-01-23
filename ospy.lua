@@ -61,13 +61,6 @@ local spoofvcsuspentionButton = Tab:CreateButton({
     end,
 })
 
-local VHSButton = ScriptTab:CreateButton({
-    Name = "VHS premium",
-    Callback = function()
-        loadstring(game:HttpGet("https://rawscripts.net/raw/Fling-Things-and-People-FTAP-VHS-FREE-PREMIUM-24411"))()
-    end,
-})
-
 local CBlitzButton = ScriptTab:CreateButton({
     Name = "Blitz premium",
     Callback = function()
