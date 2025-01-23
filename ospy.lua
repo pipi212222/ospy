@@ -44,6 +44,16 @@ Notify(format("Hi, {name}", data), "info", "Welcome To Ospy")
 local Tab = Window:CreateTab("Main")
 local Section = Tab:CreateSection("Ospy")
 
+local ScriptTab = Window:CreateTab("Script")
+local ScriptSection = ScriptTab:CreateSection("Scripts")
+
+local BlitzButton = ScriptTab:CreateButton({
+    Name = "Blitz premium",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/chaosscripter/cracks/m/blitz"))()
+    end,
+})
+
 -- Config
 Config = {
     enabled = false,
@@ -101,6 +111,13 @@ end
 Players.PlayerAdded:Connect(function(p)
     p.Chatted:Connect(function(msg) onChatted(p, msg) end)
 end)
+
+local ItsmeandButton = Tab:CreateButton({
+    Name = "# Bypass",
+    Callback = function()
+        saymsg:FireServer("its me and", "All")
+    end,
+})
 
 local OspyToggle = Tab:CreateToggle({
     Name = "Chat Spy Toggle",
